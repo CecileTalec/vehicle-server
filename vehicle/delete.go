@@ -1,4 +1,4 @@
-go build package vehicle
+package vehicle
 
 import (
 	"net/http"
