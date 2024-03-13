@@ -50,7 +50,7 @@ stop_dev_db:
 	docker container stop $(DB_CONTAINER_NAME)
 
 
-IMAGE=CecileTalec/vehicle-server
+IMAGE=ctalec/vehicle-server
 TAG=dev
 
 .PHONY: package
