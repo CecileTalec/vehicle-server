@@ -50,8 +50,9 @@ stop_dev_db:
 	docker container stop $(DB_CONTAINER_NAME)
 
 
-IMAGE?=CecileTalec/vehicle-server
-TAG?=dev
+IMAGE=CecileTalec/vehicle-server
+TAG=dev
+
 .PHONY: package
 package:
-  docker build -t $(IMAGE):$(TAG) .
+	docker build -t $(IMAGE):$(TAG) .
