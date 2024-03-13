@@ -63,4 +63,4 @@ release:
 
 docker-push:
 	git tag $(TAG) -m "$(TAG_MESSAGE)"
-	git push $(TAG)
+	git push origin $(TAG)
