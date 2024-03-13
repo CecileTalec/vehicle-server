@@ -1,5 +1,5 @@
 .PHONY: all
-all: clean dist build
+all: clean unit_test integration_test build package
 
 .PHONY: clean
 clean:
@@ -48,3 +48,10 @@ dev_db:
 .PHONY: stop_dev_db
 stop_dev_db:
 	docker container stop $(DB_CONTAINER_NAME)
+
+
+IMAGE?=CecileTalec/vehicle-server
+TAG?=dev
+.PHONY: package
+package:
+  docker build -t $(IMAGE):$(TAG) .
