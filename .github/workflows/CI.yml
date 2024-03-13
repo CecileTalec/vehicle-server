@@ -1,6 +1,7 @@
 name: CI
 on:
   - push
+  - pull_request
 jobs:
   continuous-integration:
     runs-on: ubuntu-22.04
@@ -9,5 +10,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version-file: './go.mod'
+      - run: make unit_test
+      - run: make integration_test
       - run: make
       - run: ls dist/
