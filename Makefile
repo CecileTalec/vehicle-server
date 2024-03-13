@@ -60,3 +60,7 @@ package:
 .PHONY: release
 release:
 	docker push $(IMAGE):$(TAG)
+
+docker-push:
+	git tag $(TAG) -m "$(TAG_MESSAGE)"
+	git push $(TAG)
