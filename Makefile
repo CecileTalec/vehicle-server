@@ -8,6 +8,15 @@ clean:
 dist:
 	mkdir dist
 
+.PHONY: unit_test
+unit_test:
+	go test -v -cover ./...
+
+.PHONY: integration_test
+unit_test:
+	go test -v -count=1 --tags=integration ./app
+
+
 .PHONY: build
 build : 
 	go build -o ./dist/server ./cmd/server

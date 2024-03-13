@@ -12,3 +12,5 @@ jobs:
           go-version-file: './go.mod'
       - run: make
       - run: ls dist/
+      - run: unit_test
+      - run: integration_test

@@ -1,7 +1,6 @@
 package vehicle
 
 import (
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -45,7 +44,7 @@ func (d *DeleteHandler) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 	}
 
 	if !reponse {
-		fmt.Println("ERREUR 404")
+		rw.WriteHeader(http.StatusNotFound)
 	}
 
 	rw.WriteHeader(http.StatusNoContent)
